@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f56a1f" />
+    <meta name="description" content="A heartfelt Teacher's Day memory box for Muhammad Tayyab Bashir." />
+    <title>For the teacher who leaves light behind</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="desktop-lock" id="desktop-lock" aria-live="polite">
+      <div class="desktop-lock__rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="desktop-lock__mark">✦</div>
+      <p class="mini-label mini-label--light">A gift made for one small screen</p>
+      <h1>This surprise<br /><em>belongs on your phone.</em></h1>
+      <p>This Teacher’s Day memory box is designed to open in your hands, portrait mode and all.</p>
+      <div class="desktop-lock__phone" aria-hidden="true"><i></i><b></b></div>
+      <span class="desktop-lock__foot">Please open this link on your phone</span>
+    </div>
+
+    <section class="splash" id="splash" aria-label="Teacher's Day welcome">
+      <div class="splash__texture"></div>
+      <div class="splash__film splash__film--one" aria-hidden="true"><img src="assets/must-award.jpg" alt="" /><img src="assets/teacher-strength.jpg" alt="" /><img src="assets/teacher-look-1.jpg" alt="" /></div>
+      <div class="splash__film splash__film--two" aria-hidden="true"><img src="assets/must-present.jpg" alt="" /><img src="assets/teacher-smile.jpg" alt="" /><img src="assets/must-panel.jpg" alt="" /></div>
+      <div class="splash__stamp">05<br /><small>OCT</small></div>
+      <div class="splash__content">
+        <div class="splash__topline"><span>TEACHER'S DAY</span><span>MEMORY BOX / 01</span></div>
+        <p class="mini-label mini-label--light">A digital thank-you note for</p>
+        <h1>One great<br /><em>teacher.</em><br /><span>Countless</span><br /><em>bright futures.</em></h1>
+        <p class="splash__sub">A small, loud, wildly heartfelt celebration for the person who helps ideas become real.</p>
+        <button class="splash__open" id="enter-button" type="button"><span>Allow music &amp; open</span><b>↗</b></button>
+        <div class="splash__audio-hint"><span class="audio-bars"><i></i><i></i><i></i></span> your soundtrack is ready</div>
+      </div>
+      <div class="splash__bottom"><span>MADE WITH GRATITUDE</span><span class="splash__dash"></span><span>FOR SIR</span></div>
+    </section>
+
+    <audio id="bg-audio" src="assets/music_bg.mp3" loop preload="auto" autoplay></audio>
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <main class="site" id="site">
+      <header class="topbar page-pad">
+        <a class="signature" href="#top" aria-label="Back to the beginning"><span class="signature__star">✦</span><span>for <b>sir</b><small>with all our thanks</small></span></a>
+        <button class="music-button" id="music-toggle" type="button" aria-label="Toggle background music" aria-pressed="false"><span class="music-button__icon"><i></i><i></i><i></i></span><span id="music-label">music on</span></button>
+      </header>
+
+      <section class="hero page-pad" id="top">
+        <div class="hero__copy reveal">
+          <div class="mini-label"><span class="mini-label__dot"></span> A very special teacher's day</div>
+          <h2>Sometimes you say<br /><em>“I’m not your teacher.”</em><br />But I’ll always be<br /><em>your student.</em></h2>
+          <p>Happy Teacher’s Day, Sir Muhammad Tayyab Bashir.</p>
+          <div class="hero__actions"><button class="pill-button" id="scroll-letter" type="button"><span>Start the story</span><b>↓</b></button><span class="hero__aside">scroll<br />slowly ↓</span></div>
+        </div>
+        <div class="hero-poster reveal reveal--delay">
+          <div class="hero-poster__paper"></div>
+          <div class="hero-poster__top"><span>MUHAMMAD TAYYAB</span><span>THE ORIGINAL</span></div>
+          <div class="hero-poster__photo"><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /></div>
+          <div class="hero-poster__title">THE<br /><em>TEACHER</em></div>
+          <div class="hero-poster__seal"><span>✦</span><small>ONE<br />OF<br />ONE</small></div>
+          <div class="hero-poster__note">the kind of<br /><strong>impact</strong><br />you remember</div>
+          <div class="hero-poster__bottom"><span>EST. IN EVERY LESSON</span><span>♡</span></div>
+        </div>
+        <div class="hero__marquee" aria-hidden="true"><span>THANK YOU&nbsp;&nbsp; ✦ &nbsp;&nbsp;THANK YOU&nbsp;&nbsp; ✦ &nbsp;&nbsp;THANK YOU&nbsp;&nbsp; ✦ &nbsp;&nbsp;THANK YOU&nbsp;&nbsp; ✦ &nbsp;&nbsp;</span></div>
+      </section>
+
+      <section class="intro-band">
+        <div class="intro-band__glow"></div>
+        <div class="intro-band__content page-pad reveal"><span class="intro-band__number">01</span><p>Not just a teacher.<br /><strong>A spark starter.</strong></p><span class="intro-band__arrow">↘</span></div>
+      </section>
+
+      <section class="proof-section page-pad" id="proof">
+        <div class="section-head reveal"><div class="section-index">01 <span></span> THE PROOF</div><span class="section-head__tiny">real moments · real pride</span></div>
+        <div class="proof-intro reveal"><h2>Look what<br /><em>you started.</em></h2><p>From classrooms to stages, your work keeps becoming something bigger.</p></div>
+        <div class="proof-grid reveal reveal--delay" id="proof-grid">
+          <button class="proof-card proof-card--award" type="button" data-lightbox="assets/must-award.jpg" data-caption="A proud moment worth remembering."><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /><span>the moment</span><strong>work becomes<br />a memory</strong><b>↗</b></button>
+          <button class="proof-card proof-card--techwiz" type="button" data-lightbox="assets/techwiz-workshop.png" data-caption="Helping the next generation get ready for a bigger future."><img src="assets/techwiz-workshop.png" alt="TechWiz 7 preparation workshop" /><span>the future</span><strong>minds getting<br />bigger</strong><b>↗</b></button>
+          <button class="proof-card proof-card--panel" type="button" data-lightbox="assets/must-panel.jpg" data-caption="The room listens when you lead with purpose."><img src="assets/must-panel.jpg" alt="Muhammad Tayyab Bashir presenting to a panel" /><span>the room</span><strong>ideas finding<br />their voice</strong><b>↗</b></button>
+          <button class="proof-card proof-card--present" type="button" data-lightbox="assets/must-present.jpg" data-caption="The kind of teacher who makes people want to step forward."><img src="assets/must-present.jpg" alt="Muhammad Tayyab Bashir speaking at an event" /><span>the voice</span><strong>make it<br />possible</strong><b>↗</b></button>
+        </div>
+        <div class="proof-quote reveal"><span>“</span><p>Sometimes you say, <em>“I’m not your teacher.”</em><br /><strong>But I will always be your student.</strong><small>Thank you, Sir Muhammad Tayyab Bashir.</small></p></div>
+      </section>
+
+      <section class="letter-section page-pad" id="letter">
+        <div class="section-head reveal"><div class="section-index">02 <span></span> THE LETTER</div><span class="section-head__tiny">for sir tayyab</span></div>
+        <div class="letter-intro reveal"><h2>There are<br /><em>things worth</em><br />saying out loud.</h2><p>So we put them here — in a little letter, surrounded by all the warmth you give away.</p></div>
+        <div class="letter-box reveal reveal--delay" id="letter-box">
+          <div class="letter-box__ribbon" aria-hidden="true">✦</div>
+          <div class="letter-box__top"><span>TO: THE ONE WHO BELIEVES</span><span>FROM: ALL OF US</span></div>
+          <div class="letter-envelope" id="letter-envelope">
+            <div class="letter-envelope__back"></div>
+            <div class="letter-envelope__letter">
+              <span class="letter-envelope__date">05 · 10 · 2026</span>
+              <h3>Dear Sir,</h3>
+              <p>You make the difficult feel possible, the ordinary feel meaningful, and the next step feel worth taking.</p>
+              <p>Thank you for the patience, the push, the example, and every quiet “you can do this” that became part of who we are.</p>
+              <strong>With more gratitude than words can hold,<br /><em>your students ♡</em></strong>
+            </div>
+            <button class="letter-envelope__flap" id="letter-open" type="button" aria-expanded="false"><span>tap to unfold</span><b>↗</b></button>
+            <div class="letter-envelope__front"></div>
+            <div class="letter-envelope__seal">✦</div>
+          </div>
+          <p class="letter-box__caption" id="letter-caption">A note for the teacher who leaves light behind.</p>
+        </div>
+      </section>
+
+      <section class="gallery-section page-pad" id="moments">
+        <div class="section-head reveal"><div class="section-index">03 <span></span> THE MOMENTS</div><a href="https://www.instagram.com/tayyabbits/" target="_blank" rel="noreferrer" class="section-link">see the real thing ↗</a></div>
+        <div class="gallery-intro reveal"><h2>A life in<br /><em>little frames.</em></h2><p>Swipe through the energy, the kindness, the discipline, the joy.</p></div>
+        <div class="gallery-stage reveal reveal--delay" id="gallery-stage">
+          <div class="gallery-stage__count"><span id="gallery-current">01</span><i>/</i><span id="gallery-total">11</span></div>
+          <div class="gallery-stage__image"><img id="gallery-main" src="assets/teacher-look-1.jpg" alt="Muhammad Tayyab Bashir" /></div>
+          <div class="gallery-stage__sticker" id="gallery-sticker">THE PRESENCE</div>
+          <div class="gallery-stage__side-label">swipe<br />the memories</div>
+          <div class="gallery-stage__controls"><button id="gallery-prev" type="button" aria-label="Previous memory">←</button><button id="gallery-next" type="button" aria-label="Next memory">→</button></div>
+        </div>
+        <div class="gallery-copy reveal"><div><span class="gallery-copy__eyebrow" id="gallery-kicker">THE PRESENCE</span><h3 id="gallery-title">Walk in like<br /><em>you belong.</em></h3></div><p id="gallery-note">The kind of calm confidence that makes everyone around you stand a little taller.</p></div>
+        <div class="gallery-thumbs reveal reveal--delay-short" id="gallery-thumbs" aria-label="Choose a memory">
+          <button class="gallery-thumb is-active" type="button" data-index="0"><img src="assets/teacher-look-1.jpg" alt="Memory one" /></button>
+          <button class="gallery-thumb" type="button" data-index="1"><img src="assets/teacher-smile.jpg" alt="Memory two" /></button>
+          <button class="gallery-thumb" type="button" data-index="2"><img src="assets/teacher-strength.jpg" alt="Memory three" /></button>
+          <button class="gallery-thumb" type="button" data-index="3"><img src="assets/teacher-outdoor.jpg" alt="Memory four" /></button>
+          <button class="gallery-thumb" type="button" data-index="4"><img src="assets/teacher-look-2.jpg" alt="Memory five" /></button>
+          <button class="gallery-thumb" type="button" data-index="5"><img src="assets/teacher-look-3.jpg" alt="Memory six" /></button>
+          <button class="gallery-thumb" type="button" data-index="6"><img src="assets/teacher-fitverse.jpg" alt="Memory seven" /></button>
+          <button class="gallery-thumb" type="button" data-index="7"><img src="assets/teacher-look-5.jpg" alt="Memory eight" /></button>
+          <button class="gallery-thumb" type="button" data-index="8"><img src="assets/must-award.jpg" alt="Award ceremony memory" /></button>
+          <button class="gallery-thumb" type="button" data-index="9"><img src="assets/must-panel.jpg" alt="Presentation memory" /></button>
+          <button class="gallery-thumb" type="button" data-index="10"><img src="assets/must-present.jpg" alt="Speaking memory" /></button>
+        </div>
+      </section>
+
+      <section class="light-section page-pad" id="impact">
+        <div class="light-section__top reveal"><div class="section-index section-index--light">04 <span></span> THE RIPPLE</div><span class="light-section__hand">it keeps going...</span></div>
+        <div class="light-section__copy reveal"><h2>You don't just<br />teach.<br /><em>You leave light<br />behind.</em></h2><p>The best teachers become a small, steady voice in the back of your mind — reminding you to try, to build, to begin again.</p></div>
+        <div class="constellation reveal reveal--delay" id="constellation">
+          <span class="constellation__line constellation__line--one"></span><span class="constellation__line constellation__line--two"></span><span class="constellation__line constellation__line--three"></span>
+          <button class="orbit-star orbit-star--one" type="button" data-message="For the courage to begin.">✦</button><button class="orbit-star orbit-star--two" type="button" data-message="For the confidence to keep going.">✦</button><button class="orbit-star orbit-star--three" type="button" data-message="For making the future feel possible.">✦</button><button class="orbit-star orbit-star--four" type="button" data-message="For every quiet lesson that stayed.">✦</button>
+          <div class="constellation__photo constellation__photo--one"><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /></div><div class="constellation__photo constellation__photo--two"><img src="assets/techwiz-workshop.png" alt="TechWiz workshop" /></div><div class="constellation__photo constellation__photo--three"><img src="assets/teacher-profile.jpg" alt="Muhammad Tayyab Bashir portrait" /></div>
+          <div class="constellation__center"><span>✦</span><small>tap a<br />star</small></div>
+        </div>
+        <p class="star-message" id="star-message">Tap a star and see what we’re grateful for.</p>
+        <div class="impact-stats reveal"><div><strong>∞</strong><span>ideas sparked</span></div><div><strong>01</strong><span>one unforgettable mentor</span></div><div><strong>100%</strong><span>gratitude</span></div></div>
+      </section>
+
+      <section class="wisdom-section page-pad" id="wisdom">
+        <div class="section-head reveal"><div class="section-index">05 <span></span> THE THINGS WE KEEP</div><span class="section-head__tiny">swipe the cards</span></div>
+        <div class="wisdom-intro reveal"><h2>The lessons<br /><em>that stay.</em></h2><p>Not everything you taught us was written on a board.</p></div>
+        <div class="lesson-deck reveal reveal--delay">
+          <button class="lesson-card lesson-card--orange" type="button"><span class="lesson-card__number">01</span><strong>Keep<br /><em>moving.</em></strong><small>even when the road feels lonely</small><b>tap to pin this</b></button>
+          <button class="lesson-card lesson-card--ink" type="button"><span class="lesson-card__number">02</span><strong>Take<br /><em>responsibility.</em></strong><small>your future is built by your choices</small><b>tap to pin this</b></button>
+          <button class="lesson-card lesson-card--photo" type="button"><img src="assets/must-meme.jpg" alt="A funny shared memory from his story" /><span class="lesson-card__number">03</span><b>tap to pin this</b></button>
+        </div>
+        <div class="pinned-note" id="pinned-note"><span>✦</span> <span id="pinned-text">Pin the lesson you want to carry with you.</span></div>
+      </section>
+
+      <section class="final-section page-pad" id="celebrate">
+        <div class="final-collage reveal">
+          <div class="final-collage__image final-collage__image--main"><img src="assets/teacher-look-2.jpg" alt="Muhammad Tayyab Bashir smiling" /></div><div class="final-collage__image final-collage__image--side"><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /></div><div class="final-collage__image final-collage__image--small"><img src="assets/must-present.jpg" alt="Muhammad Tayyab Bashir presenting" /></div><span class="final-collage__scribble">keep<br />shining<br />sir ✦</span>
+        </div>
+        <div class="final-message reveal reveal--delay"><div class="section-index">06 <span></span> THE LAST PAGE</div><h2>Happy<br /><em>Teacher’s</em><br />Day, Sir.</h2><p>Muhammad Tayyab Bashir — thank you for every spark, every push, and every future you made brighter.</p><div class="final-thank">Thank you, Sir <strong>♡</strong><small>Happy Teacher’s Day, Sir Tayyab</small></div><button class="celebrate-button" id="celebrate-button" type="button"><span>Make it rain gratitude</span><b>✦</b></button></div>
+      </section>
+
+      <footer class="footer page-pad"><div class="footer__name"><span>✦</span><p>made for <strong>Muhammad Tayyab Bashir</strong><small>with all the respect in the world</small></p></div><div class="footer__bottom"><span>TEACHER'S DAY / 2026</span><a href="https://www.instagram.com/tayyabbits/" target="_blank" rel="noreferrer">@tayyabbits ↗</a></div></footer>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox__close" id="lightbox-close" type="button" aria-label="Close image">×</button><div class="lightbox__frame"><img id="lightbox-image" src="" alt="" /><p id="lightbox-caption"></p></div></div>
+    <nav class="bottom-nav" aria-label="Quick navigation"><a class="is-active" href="#top"><span>✦</span><small>home</small></a><a href="#proof"><span>◈</span><small>proof</small></a><a href="#letter"><span>✉</span><small>letter</small></a><a href="#celebrate"><span>♡</span><small>celebrate</small></a></nav>
+    <script src="script.js"></script>
+  </body>
+</html>
