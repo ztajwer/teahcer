@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#f56a1f" />
     <meta name="description" content="A heartfelt Teacher's Day memory box for Muhammad Tayyab Bashir." />
     <title>For the teacher who leaves light behind</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f5681e'/%3E%3Ctext x='32' y='43' fill='%23fff9f1' font-size='34' text-anchor='middle'%3E✦%3C/text%3E%3C/svg%3E" />
+    <link rel="preload" as="image" href="assets/optimized/must-award.webp" type="image/webp" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
@@ -24,8 +26,8 @@
 
     <section class="splash" id="splash" aria-label="Teacher's Day welcome">
       <div class="splash__texture"></div>
-      <div class="splash__film splash__film--one" aria-hidden="true"><img src="assets/must-award.jpg" alt="" /><img src="assets/teacher-strength.jpg" alt="" /><img src="assets/teacher-look-1.jpg" alt="" /></div>
-      <div class="splash__film splash__film--two" aria-hidden="true"><img src="assets/must-present.jpg" alt="" /><img src="assets/teacher-smile.jpg" alt="" /><img src="assets/must-panel.jpg" alt="" /></div>
+      <div class="splash__film splash__film--one" aria-hidden="true"><img src="assets/optimized/must-award.webp" alt="" loading="lazy" decoding="async" /><img src="assets/optimized/teacher-strength.webp" alt="" loading="lazy" decoding="async" /><img src="assets/optimized/teacher-look-1.webp" alt="" loading="lazy" decoding="async" /></div>
+      <div class="splash__film splash__film--two" aria-hidden="true"><img src="assets/optimized/must-present.webp" alt="" loading="lazy" decoding="async" /><img src="assets/optimized/teacher-smile.webp" alt="" loading="lazy" decoding="async" /><img src="assets/optimized/must-panel.webp" alt="" loading="lazy" decoding="async" /></div>
       <div class="splash__stamp">05<br /><small>OCT</small></div>
       <div class="splash__content">
         <div class="splash__topline"><span>TEACHER'S DAY</span><span>MEMORY BOX / 01</span></div>
@@ -38,7 +40,10 @@
       <div class="splash__bottom"><span>MADE WITH GRATITUDE</span><span class="splash__dash"></span><span>FOR SIR</span></div>
     </section>
 
-    <audio id="bg-audio" src="assets/music_bg.mp3" loop preload="auto" autoplay></audio>
+    <audio id="bg-audio" loop preload="none">
+      <source src="assets/optimized/music_bg.m4a" type="audio/mp4" />
+      <source src="assets/music_bg.mp3" type="audio/mpeg" />
+    </audio>
     <canvas id="confetti-canvas" aria-hidden="true"></canvas>
 
     <main class="site" id="site">
@@ -57,7 +62,7 @@
         <div class="hero-poster reveal reveal--delay">
           <div class="hero-poster__paper"></div>
           <div class="hero-poster__top"><span>MUHAMMAD TAYYAB</span><span>THE ORIGINAL</span></div>
-          <div class="hero-poster__photo"><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /></div>
+          <div class="hero-poster__photo"><img src="assets/optimized/must-award.webp" alt="Muhammad Tayyab Bashir receiving an award" decoding="async" fetchpriority="high" /></div>
           <div class="hero-poster__title">THE<br /><em>TEACHER</em></div>
           <div class="hero-poster__seal"><span>✦</span><small>ONE<br />OF<br />ONE</small></div>
           <div class="hero-poster__note">the kind of<br /><strong>impact</strong><br />you remember</div>
@@ -75,10 +80,10 @@
         <div class="section-head reveal"><div class="section-index">01 <span></span> THE PROOF</div><span class="section-head__tiny">real moments · real pride</span></div>
         <div class="proof-intro reveal"><h2>Look what<br /><em>you started.</em></h2><p>From classrooms to stages, your work keeps becoming something bigger.</p></div>
         <div class="proof-grid reveal reveal--delay" id="proof-grid">
-          <button class="proof-card proof-card--award" type="button" data-lightbox="assets/must-award.jpg" data-caption="A proud moment worth remembering."><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /><span>the moment</span><strong>work becomes<br />a memory</strong><b>↗</b></button>
-          <button class="proof-card proof-card--techwiz" type="button" data-lightbox="assets/techwiz-workshop.png" data-caption="Helping the next generation get ready for a bigger future."><img src="assets/techwiz-workshop.png" alt="TechWiz 7 preparation workshop" /><span>the future</span><strong>minds getting<br />bigger</strong><b>↗</b></button>
-          <button class="proof-card proof-card--panel" type="button" data-lightbox="assets/must-panel.jpg" data-caption="The room listens when you lead with purpose."><img src="assets/must-panel.jpg" alt="Muhammad Tayyab Bashir presenting to a panel" /><span>the room</span><strong>ideas finding<br />their voice</strong><b>↗</b></button>
-          <button class="proof-card proof-card--present" type="button" data-lightbox="assets/must-present.jpg" data-caption="The kind of teacher who makes people want to step forward."><img src="assets/must-present.jpg" alt="Muhammad Tayyab Bashir speaking at an event" /><span>the voice</span><strong>make it<br />possible</strong><b>↗</b></button>
+          <button class="proof-card proof-card--award" type="button" data-lightbox="assets/optimized/must-award.webp" data-caption="A proud moment worth remembering."><img src="assets/optimized/must-award.webp" alt="Muhammad Tayyab Bashir receiving an award" loading="lazy" decoding="async" /><span>the moment</span><strong>work becomes<br />a memory</strong><b>↗</b></button>
+          <button class="proof-card proof-card--techwiz" type="button" data-lightbox="assets/optimized/techwiz-workshop.webp" data-caption="Helping the next generation get ready for a bigger future."><img src="assets/optimized/techwiz-workshop.webp" alt="TechWiz 7 preparation workshop" loading="lazy" decoding="async" /><span>the future</span><strong>minds getting<br />bigger</strong><b>↗</b></button>
+          <button class="proof-card proof-card--panel" type="button" data-lightbox="assets/optimized/must-panel.webp" data-caption="The room listens when you lead with purpose."><img src="assets/optimized/must-panel.webp" alt="Muhammad Tayyab Bashir presenting to a panel" loading="lazy" decoding="async" /><span>the room</span><strong>ideas finding<br />their voice</strong><b>↗</b></button>
+          <button class="proof-card proof-card--present" type="button" data-lightbox="assets/optimized/must-present.webp" data-caption="The kind of teacher who makes people want to step forward."><img src="assets/optimized/must-present.webp" alt="Muhammad Tayyab Bashir speaking at an event" loading="lazy" decoding="async" /><span>the voice</span><strong>make it<br />possible</strong><b>↗</b></button>
         </div>
         <div class="proof-quote reveal"><span>“</span><p>Sometimes you say, <em>“I’m not your teacher.”</em><br /><strong>But I will always be your student.</strong><small>Thank you, Sir Muhammad Tayyab Bashir.</small></p></div>
       </section>
@@ -111,24 +116,24 @@
         <div class="gallery-intro reveal"><h2>A life in<br /><em>little frames.</em></h2><p>Swipe through the energy, the kindness, the discipline, the joy.</p></div>
         <div class="gallery-stage reveal reveal--delay" id="gallery-stage">
           <div class="gallery-stage__count"><span id="gallery-current">01</span><i>/</i><span id="gallery-total">11</span></div>
-          <div class="gallery-stage__image"><img id="gallery-main" src="assets/teacher-look-1.jpg" alt="Muhammad Tayyab Bashir" /></div>
+          <div class="gallery-stage__image"><img id="gallery-main" src="assets/optimized/teacher-look-1.webp" alt="Muhammad Tayyab Bashir" loading="lazy" decoding="async" /></div>
           <div class="gallery-stage__sticker" id="gallery-sticker">THE PRESENCE</div>
           <div class="gallery-stage__side-label">swipe<br />the memories</div>
           <div class="gallery-stage__controls"><button id="gallery-prev" type="button" aria-label="Previous memory">←</button><button id="gallery-next" type="button" aria-label="Next memory">→</button></div>
         </div>
         <div class="gallery-copy reveal"><div><span class="gallery-copy__eyebrow" id="gallery-kicker">THE PRESENCE</span><h3 id="gallery-title">Walk in like<br /><em>you belong.</em></h3></div><p id="gallery-note">The kind of calm confidence that makes everyone around you stand a little taller.</p></div>
         <div class="gallery-thumbs reveal reveal--delay-short" id="gallery-thumbs" aria-label="Choose a memory">
-          <button class="gallery-thumb is-active" type="button" data-index="0"><img src="assets/teacher-look-1.jpg" alt="Memory one" /></button>
-          <button class="gallery-thumb" type="button" data-index="1"><img src="assets/teacher-smile.jpg" alt="Memory two" /></button>
-          <button class="gallery-thumb" type="button" data-index="2"><img src="assets/teacher-strength.jpg" alt="Memory three" /></button>
-          <button class="gallery-thumb" type="button" data-index="3"><img src="assets/teacher-outdoor.jpg" alt="Memory four" /></button>
-          <button class="gallery-thumb" type="button" data-index="4"><img src="assets/teacher-look-2.jpg" alt="Memory five" /></button>
-          <button class="gallery-thumb" type="button" data-index="5"><img src="assets/teacher-look-3.jpg" alt="Memory six" /></button>
-          <button class="gallery-thumb" type="button" data-index="6"><img src="assets/teacher-fitverse.jpg" alt="Memory seven" /></button>
-          <button class="gallery-thumb" type="button" data-index="7"><img src="assets/teacher-look-5.jpg" alt="Memory eight" /></button>
-          <button class="gallery-thumb" type="button" data-index="8"><img src="assets/must-award.jpg" alt="Award ceremony memory" /></button>
-          <button class="gallery-thumb" type="button" data-index="9"><img src="assets/must-panel.jpg" alt="Presentation memory" /></button>
-          <button class="gallery-thumb" type="button" data-index="10"><img src="assets/must-present.jpg" alt="Speaking memory" /></button>
+          <button class="gallery-thumb is-active" type="button" data-index="0"><img src="assets/optimized/teacher-look-1.webp" alt="Memory one" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="1"><img src="assets/optimized/teacher-smile.webp" alt="Memory two" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="2"><img src="assets/optimized/teacher-strength.webp" alt="Memory three" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="3"><img src="assets/optimized/teacher-outdoor.webp" alt="Memory four" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="4"><img src="assets/optimized/teacher-look-2.webp" alt="Memory five" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="5"><img src="assets/optimized/teacher-look-3.webp" alt="Memory six" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="6"><img src="assets/optimized/teacher-fitverse.webp" alt="Memory seven" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="7"><img src="assets/optimized/teacher-look-5.webp" alt="Memory eight" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="8"><img src="assets/optimized/must-award.webp" alt="Award ceremony memory" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="9"><img src="assets/optimized/must-panel.webp" alt="Presentation memory" loading="lazy" decoding="async" /></button>
+          <button class="gallery-thumb" type="button" data-index="10"><img src="assets/optimized/must-present.webp" alt="Speaking memory" loading="lazy" decoding="async" /></button>
         </div>
       </section>
 
@@ -138,7 +143,7 @@
         <div class="constellation reveal reveal--delay" id="constellation">
           <span class="constellation__line constellation__line--one"></span><span class="constellation__line constellation__line--two"></span><span class="constellation__line constellation__line--three"></span>
           <button class="orbit-star orbit-star--one" type="button" data-message="For the courage to begin.">✦</button><button class="orbit-star orbit-star--two" type="button" data-message="For the confidence to keep going.">✦</button><button class="orbit-star orbit-star--three" type="button" data-message="For making the future feel possible.">✦</button><button class="orbit-star orbit-star--four" type="button" data-message="For every quiet lesson that stayed.">✦</button>
-          <div class="constellation__photo constellation__photo--one"><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /></div><div class="constellation__photo constellation__photo--two"><img src="assets/techwiz-workshop.png" alt="TechWiz workshop" /></div><div class="constellation__photo constellation__photo--three"><img src="assets/teacher-profile.jpg" alt="Muhammad Tayyab Bashir portrait" /></div>
+          <div class="constellation__photo constellation__photo--one"><img src="assets/optimized/must-award.webp" alt="Muhammad Tayyab Bashir receiving an award" loading="lazy" decoding="async" /></div><div class="constellation__photo constellation__photo--two"><img src="assets/optimized/techwiz-workshop.webp" alt="TechWiz workshop" loading="lazy" decoding="async" /></div><div class="constellation__photo constellation__photo--three"><img src="assets/optimized/teacher-profile.webp" alt="Muhammad Tayyab Bashir portrait" loading="lazy" decoding="async" /></div>
           <div class="constellation__center"><span>✦</span><small>tap a<br />star</small></div>
         </div>
         <p class="star-message" id="star-message">Tap a star and see what we’re grateful for.</p>
@@ -151,14 +156,14 @@
         <div class="lesson-deck reveal reveal--delay">
           <button class="lesson-card lesson-card--orange" type="button"><span class="lesson-card__number">01</span><strong>Keep<br /><em>moving.</em></strong><small>even when the road feels lonely</small><b>tap to pin this</b></button>
           <button class="lesson-card lesson-card--ink" type="button"><span class="lesson-card__number">02</span><strong>Take<br /><em>responsibility.</em></strong><small>your future is built by your choices</small><b>tap to pin this</b></button>
-          <button class="lesson-card lesson-card--photo" type="button"><img src="assets/must-meme.jpg" alt="A funny shared memory from his story" /><span class="lesson-card__number">03</span><b>tap to pin this</b></button>
+          <button class="lesson-card lesson-card--photo" type="button"><img src="assets/optimized/must-meme.webp" alt="A funny shared memory from his story" loading="lazy" decoding="async" /><span class="lesson-card__number">03</span><b>tap to pin this</b></button>
         </div>
         <div class="pinned-note" id="pinned-note"><span>✦</span> <span id="pinned-text">Pin the lesson you want to carry with you.</span></div>
       </section>
 
       <section class="final-section page-pad" id="celebrate">
         <div class="final-collage reveal">
-          <div class="final-collage__image final-collage__image--main"><img src="assets/teacher-look-2.jpg" alt="Muhammad Tayyab Bashir smiling" /></div><div class="final-collage__image final-collage__image--side"><img src="assets/must-award.jpg" alt="Muhammad Tayyab Bashir receiving an award" /></div><div class="final-collage__image final-collage__image--small"><img src="assets/must-present.jpg" alt="Muhammad Tayyab Bashir presenting" /></div><span class="final-collage__scribble">keep<br />shining<br />sir ✦</span>
+          <div class="final-collage__image final-collage__image--main"><img src="assets/optimized/teacher-look-2.webp" alt="Muhammad Tayyab Bashir smiling" loading="lazy" decoding="async" /></div><div class="final-collage__image final-collage__image--side"><img src="assets/optimized/must-award.webp" alt="Muhammad Tayyab Bashir receiving an award" loading="lazy" decoding="async" /></div><div class="final-collage__image final-collage__image--small"><img src="assets/optimized/must-present.webp" alt="Muhammad Tayyab Bashir presenting" loading="lazy" decoding="async" /></div><span class="final-collage__scribble">keep<br />shining<br />sir ✦</span>
         </div>
         <div class="final-message reveal reveal--delay"><div class="section-index">06 <span></span> THE LAST PAGE</div><h2>Happy<br /><em>Teacher’s</em><br />Day, Sir.</h2><p>Muhammad Tayyab Bashir — thank you for every spark, every push, and every future you made brighter.</p><div class="final-thank">Thank you, Sir <strong>♡</strong><small>Happy Teacher’s Day, Sir Tayyab</small></div><button class="celebrate-button" id="celebrate-button" type="button"><span>Make it rain gratitude</span><b>✦</b></button></div>
       </section>

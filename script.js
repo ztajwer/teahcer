@@ -10,6 +10,9 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 let particles = [];
 let animationFrame = null;
 let audioStarted = false;
+let audioStartPromise = null;
+let canvasContext = null;
+let gallerySwitchTimer = 0;
 
 function setMusicState(playing) {
   musicToggle?.classList.toggle('is-muted', !playing);
@@ -19,11 +22,27 @@ function setMusicState(playing) {
 
 function startMusic() {
   if (!audio) return;
+  if (audioStartPromise) return;
+  if (!audio.paused) {
+    setMusicState(true);
+    return;
+  }
   audio.loop = true;
   audio.volume = 0.34;
   const promise = audio.play();
   if (promise?.then) {
-    promise.then(() => { audioStarted = true; setMusicState(true); }).catch(() => setMusicState(false));
+    audioStartPromise = promise;
+    promise.then(() => {
+      audioStarted = true;
+      audioStartPromise = null;
+      setMusicState(true);
+    }).catch(() => {
+      audioStartPromise = null;
+      setMusicState(false);
+    });
+  } else {
+    audioStarted = true;
+    setMusicState(true);
   }
 }
 
@@ -36,7 +55,7 @@ function enterExperience() {
 }
 
 enterButton?.addEventListener('click', enterExperience);
-window.addEventListener('load', () => { if (isPhone) startMusic(); });
+setMusicState(false);
 
 musicToggle?.addEventListener('click', () => {
   if (!audioStarted || audio.paused) startMusic();
@@ -64,17 +83,17 @@ letterOpen?.addEventListener('click', () => {
 });
 
 const galleryItems = [
-  { image: 'assets/teacher-look-1.jpg', kicker: 'THE PRESENCE', title: 'Walk in like<br /><em>you belong.</em>', note: 'The kind of calm confidence that makes everyone around you stand a little taller.', alt: 'Muhammad Tayyab Bashir in a cream blazer' },
-  { image: 'assets/teacher-smile.jpg', kicker: 'THE WARMTH', title: 'Leave a little<br /><em>light everywhere.</em>', note: 'The smile, the welcome, the energy that makes learning feel human.', alt: 'Muhammad Tayyab Bashir smiling in a warm shirt' },
-  { image: 'assets/teacher-strength.jpg', kicker: 'THE DISCIPLINE', title: 'Strong enough<br /><em>to keep going.</em>', note: 'You show us that consistency is its own kind of superpower.', alt: 'Muhammad Tayyab Bashir at the gym' },
-  { image: 'assets/teacher-outdoor.jpg', kicker: 'THE ADVENTURE', title: 'Keep finding<br /><em>new views.</em>', note: 'There is always another horizon when you teach us to stay curious.', alt: 'Muhammad Tayyab Bashir outdoors' },
-  { image: 'assets/teacher-look-2.jpg', kicker: 'THE JOY', title: 'Make room for<br /><em>the good stuff.</em>', note: 'Because the best kind of success still leaves room for a real smile.', alt: 'Muhammad Tayyab Bashir taking a selfie' },
-  { image: 'assets/teacher-look-3.jpg', kicker: 'THE EXAMPLE', title: 'Show up as<br /><em>your best self.</em>', note: 'Not by being perfect — by being present, prepared, and real.', alt: 'Muhammad Tayyab Bashir beside a pool' },
-  { image: 'assets/teacher-fitverse.jpg', kicker: 'THE BUILDER', title: 'Build it with<br /><em>your whole heart.</em>', note: 'You bring the same focus to every room, every goal, every person.', alt: 'Muhammad Tayyab Bashir at FitVerse' },
-  { image: 'assets/teacher-look-5.jpg', kicker: 'THE FIGHT', title: 'Believe in<br /><em>miracles.</em>', note: 'And then put in the work that gives them somewhere to land.', alt: 'Muhammad Tayyab Bashir training at the gym' },
-  { image: 'assets/must-award.jpg', kicker: 'THE MOMENT', title: 'Celebrate the<br /><em>wins.</em>', note: 'Because you have a way of turning hard work into a room full of possibility.', alt: 'Muhammad Tayyab Bashir receiving an award' },
-  { image: 'assets/must-panel.jpg', kicker: 'THE ROOM', title: 'Make the room<br /><em>braver.</em>', note: 'You don’t need a stage to make people listen. You bring your own light.', alt: 'Muhammad Tayyab Bashir presenting to a panel' },
-  { image: 'assets/must-present.jpg', kicker: 'THE VOICE', title: 'Speak with<br /><em>purpose.</em>', note: 'The kind of clarity that makes good ideas land.', alt: 'Muhammad Tayyab Bashir speaking at an event' },
+  { image: 'assets/optimized/teacher-look-1.webp', kicker: 'THE PRESENCE', title: 'Walk in like<br /><em>you belong.</em>', note: 'The kind of calm confidence that makes everyone around you stand a little taller.', alt: 'Muhammad Tayyab Bashir in a cream blazer' },
+  { image: 'assets/optimized/teacher-smile.webp', kicker: 'THE WARMTH', title: 'Leave a little<br /><em>light everywhere.</em>', note: 'The smile, the welcome, the energy that makes learning feel human.', alt: 'Muhammad Tayyab Bashir smiling in a warm shirt' },
+  { image: 'assets/optimized/teacher-strength.webp', kicker: 'THE DISCIPLINE', title: 'Strong enough<br /><em>to keep going.</em>', note: 'You show us that consistency is its own kind of superpower.', alt: 'Muhammad Tayyab Bashir at the gym' },
+  { image: 'assets/optimized/teacher-outdoor.webp', kicker: 'THE ADVENTURE', title: 'Keep finding<br /><em>new views.</em>', note: 'There is always another horizon when you teach us to stay curious.', alt: 'Muhammad Tayyab Bashir outdoors' },
+  { image: 'assets/optimized/teacher-look-2.webp', kicker: 'THE JOY', title: 'Make room for<br /><em>the good stuff.</em>', note: 'Because the best kind of success still leaves room for a real smile.', alt: 'Muhammad Tayyab Bashir taking a selfie' },
+  { image: 'assets/optimized/teacher-look-3.webp', kicker: 'THE EXAMPLE', title: 'Show up as<br /><em>your best self.</em>', note: 'Not by being perfect — by being present, prepared, and real.', alt: 'Muhammad Tayyab Bashir beside a pool' },
+  { image: 'assets/optimized/teacher-fitverse.webp', kicker: 'THE BUILDER', title: 'Build it with<br /><em>your whole heart.</em>', note: 'You bring the same focus to every room, every goal, every person.', alt: 'Muhammad Tayyab Bashir at FitVerse' },
+  { image: 'assets/optimized/teacher-look-5.webp', kicker: 'THE FIGHT', title: 'Believe in<br /><em>miracles.</em>', note: 'And then put in the work that gives them somewhere to land.', alt: 'Muhammad Tayyab Bashir training at the gym' },
+  { image: 'assets/optimized/must-award.webp', kicker: 'THE MOMENT', title: 'Celebrate the<br /><em>wins.</em>', note: 'Because you have a way of turning hard work into a room full of possibility.', alt: 'Muhammad Tayyab Bashir receiving an award' },
+  { image: 'assets/optimized/must-panel.webp', kicker: 'THE ROOM', title: 'Make the room<br /><em>braver.</em>', note: 'You don’t need a stage to make people listen. You bring your own light.', alt: 'Muhammad Tayyab Bashir presenting to a panel' },
+  { image: 'assets/optimized/must-present.webp', kicker: 'THE VOICE', title: 'Speak with<br /><em>purpose.</em>', note: 'The kind of clarity that makes good ideas land.', alt: 'Muhammad Tayyab Bashir speaking at an event' },
 ];
 let galleryIndex = 0;
 const galleryStage = document.querySelector('#gallery-stage');
@@ -86,11 +105,19 @@ const galleryTitle = document.querySelector('#gallery-title');
 const galleryNote = document.querySelector('#gallery-note');
 const galleryThumbs = [...document.querySelectorAll('.gallery-thumb')];
 
+function preloadGalleryItem(index) {
+  const item = galleryItems[(index + galleryItems.length) % galleryItems.length];
+  const image = new Image();
+  image.decoding = 'async';
+  image.src = item.image;
+}
+
 function showGallery(index) {
   galleryIndex = (index + galleryItems.length) % galleryItems.length;
   const item = galleryItems[galleryIndex];
   galleryStage?.classList.add('is-switching');
-  window.setTimeout(() => {
+  window.clearTimeout(gallerySwitchTimer);
+  gallerySwitchTimer = window.setTimeout(() => {
     if (galleryImage) { galleryImage.src = item.image; galleryImage.alt = item.alt; }
     if (galleryCurrent) galleryCurrent.textContent = String(galleryIndex + 1).padStart(2, '0');
     if (gallerySticker) gallerySticker.textContent = item.kicker;
@@ -99,6 +126,7 @@ function showGallery(index) {
     if (galleryNote) galleryNote.textContent = item.note;
     galleryStage?.classList.remove('is-switching');
   }, 170);
+  preloadGalleryItem(galleryIndex + 1);
   galleryThumbs.forEach((thumb, thumbIndex) => thumb.classList.toggle('is-active', thumbIndex === galleryIndex));
   const thumbsContainer = galleryThumbs[galleryIndex]?.parentElement;
   const activeThumb = galleryThumbs[galleryIndex];
@@ -174,28 +202,33 @@ const navObserver = new IntersectionObserver((entries) => entries.forEach((entry
 navSections.forEach((section) => navObserver.observe(section));
 
 function setupCanvas() {
-  if (!canvas) return;
+  if (!canvas || !isPhone) return;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = window.innerWidth * dpr;
   canvas.height = window.innerHeight * dpr;
   canvas.style.width = `${window.innerWidth}px`;
   canvas.style.height = `${window.innerHeight}px`;
-  canvas.getContext('2d').setTransform(dpr, 0, 0, dpr, 0, 0);
+  canvasContext = canvasContext || canvas.getContext('2d');
+  canvasContext?.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 
 function burstConfetti(amount, originX, originY) {
   if (!isPhone || !canvas || reducedMotion) return;
+  if (!canvasContext) setupCanvas();
+  if (!canvasContext) return;
   const colors = ['#f5681e', '#ffad68', '#ffd4ae', '#201a17', '#fff9f1', '#db4c12'];
   for (let i = 0; i < amount; i += 1) {
     const angle = Math.random() * Math.PI * 2;
     const power = 3 + Math.random() * 8;
     particles.push({ x: originX, y: originY, vx: Math.cos(angle) * power, vy: Math.sin(angle) * power - 4, gravity: .16 + Math.random() * .11, drag: .985, size: 4 + Math.random() * 6, rotation: Math.random() * Math.PI, rotationSpeed: (Math.random() - .5) * .24, color: colors[Math.floor(Math.random() * colors.length)], life: 1 });
   }
+  if (particles.length > 220) particles = particles.slice(-220);
   if (!animationFrame) animateConfetti();
 }
 
 function animateConfetti() {
-  const context = canvas.getContext('2d');
+  const context = canvasContext;
+  if (!context) return;
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
   particles = particles.filter((particle) => particle.life > 0 && particle.y < window.innerHeight + 45);
   particles.forEach((particle) => {
@@ -206,5 +239,4 @@ function animateConfetti() {
   else { cancelAnimationFrame(animationFrame); animationFrame = null; }
 }
 
-setupCanvas();
-window.addEventListener('resize', setupCanvas);
+if (isPhone) window.addEventListener('resize', setupCanvas, { passive: true });
